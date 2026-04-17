@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CrystalMetrics | Ultra-HD Master Presentation</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+		
+		<style>
+			:root {
+				--inst-red: #C41E3A;
+				--inst-grey-dark: #1e293b;
+				--inst-grey-light: #f8fafc;
+				--bg-white: #ffffff;
+				--text-main: #0f172a;
+				--shadow: 0 20px 50px rgba(0,0,0,0.15);
+			}
+
+			.reveal {
+				background-color: var(--bg-white);
+				color: var(--text-main);
+				font-family: 'Inter', system-ui, sans-serif;
+			}
+
+			.reveal::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background-image: 
+					linear-gradient(rgba(196, 30, 58, 0.02) 2px, transparent 2px),
+					linear-gradient(90deg, rgba(196, 30, 58, 0.02) 2px, transparent 2px);
+				background-size: 100px 100px;
+				pointer-events: none;
+				z-index: -1;
+			}
+
+			.watermark {
+				position: absolute;
+				font-size: 15em;
+				font-weight: 900;
+				color: rgba(0,0,0,0.03);
+				top: -50px;
+				right: -50px;
+				z-index: -1;
+				user-select: none;
+			}
+
+			.reveal h1 { font-size: 6em !important; font-weight: 900 !important; color: var(--inst-red); text-transform: uppercase; margin-bottom: 20px !important; line-height: 0.8; letter-spacing: -5px; filter: drop-shadow(0 10px 20px rgba(196, 30, 58, 0.2)); }
+			.reveal h2 { font-size: 4em !important; font-weight: 800 !important; color: var(--inst-grey-dark); text-align: left; border-left: 25px solid var(--inst-red); padding-left: 40px !important; margin-bottom: 60px !important; line-height: 1; }
+			.reveal h3 { font-size: 2.5em !important; color: var(--inst-red); font-weight: 800 !important; text-align: left; margin-bottom: 30px !important; text-transform: uppercase; letter-spacing: -1px; }
+			.reveal p, .reveal li { font-size: 2.2em !important; line-height: 1.1 !important; color: var(--text-main); text-align: left; font-weight: 600; margin-bottom: 30px !important; }
+
+			.highlight { color: var(--inst-red); font-weight: 900; background: rgba(196, 30, 58, 0.05); padding: 0 10px; border-radius: 5px; }
+			
+			.content-box {
+				background: var(--inst-grey-light);
+				border-left: 30px solid var(--inst-red);
+				padding: 80px !important;
+				border-radius: 20px;
+				margin: 40px 0;
+				box-shadow: var(--shadow);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.tag {
+				font-size: 1em !important;
+				font-weight: 900;
+				background: var(--inst-grey-dark);
+				color: #fff;
+				padding: 20px 50px;
+				border-radius: 10px;
+				text-transform: uppercase;
+				letter-spacing: 8px;
+				margin-bottom: 60px;
+				display: inline-block;
+				box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+			}
+
+			.math-large {
+				font-size: 4.5em !important;
+				background: var(--inst-grey-dark);
+				padding: 100px;
+				border-radius: 30px;
+				color: #ffffff;
+				margin: 80px 0;
+				text-align: center;
+				font-family: 'serif';
+				box-shadow: 0 50px 100px rgba(196, 30, 58, 0.4);
+				border: 5px solid var(--inst-red);
+				text-shadow: 0 0 30px rgba(255,255,255,0.3);
+			}
+
+			.grid-2 {
+				display: grid;
+				grid-template-columns: 1.1fr 0.9fr;
+				gap: 100px;
+				align-items: center;
+			}
+
+			.reveal .controls { color: var(--inst-red) !important; scale: 2; bottom: 60px !important; right: 60px !important; }
+			.reveal .progress { height: 15px !important; }
+			.reveal .progress span { background: var(--inst-red) !important; }
+
+			.footer-inst {
+				position: absolute;
+				bottom: 50px;
+				left: 100px;
+				right: 100px;
+				display: flex;
+				justify-content: space-between;
+				font-size: 1em;
+				color: var(--inst-grey-dark);
+				font-weight: 900;
+				text-transform: uppercase;
+				border-top: 5px solid var(--inst-red);
+				padding-top: 30px;
+			}
+
+			img { border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.4); border: 10px solid var(--inst-red); max-height: 600px; width: auto; transition: transform 0.3s ease; }
+			img:hover { transform: scale(1.02); }
+
+			ul { list-style: none !important; }
+			li::before { content: '▶'; color: var(--inst-red); margin-right: 20px; font-size: 0.8em; }
+		</style>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<!-- CHAPTER 0: COVER -->
+				<section data-background-gradient="linear-gradient(to bottom, #fff, #f1f5f9)">
+					<div class="watermark">00</div>
+					<span class="tag">INTERDISCIPLINARY PROJECT 2026</span>
+					<h1 style="font-size: 8em !important;">CrystalMetrics</h1>
+					<p style="font-size: 3.5em !important; color: var(--inst-grey-dark); text-align: center !important; font-weight: 900; margin-top: 40px;">THE SCIENCE OF ATOMIC MAPPING</p>
+					<div style="margin-top: 200px; font-weight: 900; font-size: 2em; color: var(--inst-red); letter-spacing: 5px;">
+						FORERO • HOMEZ • CAINA
+					</div>
+				</section>
+
+				<!-- CHAPTER 1: HISTORY -->
+				<section>
+					<section>
+						<div class="watermark">01</div>
+						<span class="tag">CHAPTER 01</span>
+						<h2>History of Atomic Vision</h2>
+						<div class="content-box">
+							<p>Before 1895, the internal world of matter was <span class="highlight">completely invisible</span>. Scientists could only guess how atoms were arranged until a series of breakthroughs changed everything.</p>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">1895</div>
+						<h3>Wilhelm Röntgen: The Accident</h3>
+						<div class="grid-2">
+							<div>
+								<p>Röntgen discovered <span class="highlight">X-Rays</span> while testing cathode rays in a dark lab.</p>
+								<ul>
+									<li>He noticed a screen glowing far away, proving a new "invisible light" existed.</li>
+									<li><span class="highlight">Key Fact:</span> He called them "X" because the rays were an unknown variable.</li>
+									<li>Winner of the first Nobel Prize in Physics (1901).</li>
+								</ul>
+							</div>
+							<div style="text-align: center;">
+								<img src="Downloads/Wilhelm-Roentgen-1.png" alt="Wilhelm Roentgen">
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">XRAY</div>
+						<h3>The Hand of Bertha (1895)</h3>
+						<div class="grid-2">
+							<div>
+								<p>The first clinical X-ray image in history, showing his wife's hand.</p>
+								<ul>
+									<li><span class="highlight">Exposure:</span> It took 15 minutes of radiation to get this single image.</li>
+									<li>Notice the ring: Metal blocks X-rays better than bone or flesh.</li>
+									<li>Bertha's reaction: "I have seen my death!"</li>
+								</ul>
+							</div>
+							<div style="text-align: center;">
+								<img src="Downloads/primera radiografia.jpg" alt="First X-Ray">
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">1912</div>
+						<h3>Max von Laue's Proof</h3>
+						<div class="content-box">
+							<p>Von Laue proved that crystals were <span class="highlight">Geometric Lattices</span> acting as a diffraction grating.</p>
+							<ul>
+								<li>This proved two things: X-rays are waves (like light) and crystals have a repetitive atomic structure.</li>
+								<li>Without this proof, we wouldn't know that atoms are ordered in "grids".</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">1913</div>
+						<h3>The Bragg Legacy</h3>
+						<div class="grid-2">
+							<div>
+								<p>Father and son (William & Lawrence Bragg) created the link between <span class="highlight">Angles and Distance</span>.</p>
+								<ul>
+									<li>They simplified the complex math of Von Laue.</li>
+									<li>Lawrence was only 25 when he won the Nobel Prize (the youngest for decades).</li>
+								</ul>
+							</div>
+							<div style="text-align: center;">
+								<img src="Downloads/bragg ley.jpg" alt="Bragg's Law Diagram">
+							</div>
+						</div>
+						<div class="math-large">n&lambda; = 2d sin(&theta;)</div>
+					</section>
+				</section>
+
+				<!-- CHAPTER 2: INTERDISCIPLINARY TOPICS -->
+				<section>
+					<section>
+						<div class="watermark">02</div>
+						<span class="tag">CHAPTER 02</span>
+						<h2>Core Scientific Pillars</h2>
+						<div class="content-box">
+							<p>Crystallography bridges Physics, Biology, and Chemistry through structural analysis.</p>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">LIFE</div>
+						<h3>Biology: Decoding DNA</h3>
+						<div class="grid-2">
+							<div>
+								<p>Rosalind Franklin's <span class="highlight">Photo 51</span>: The mathematical proof of the Double Helix.</p>
+								<ul>
+									<li>The "X" shape in the photo is the signature of a spiral (helix) structure.</li>
+									<li>Without this X-ray, the structure of life would have remained a mystery.</li>
+									<li><span class="highlight">Presenter Tip:</span> This photo was taken in 1952 using a sample of pure DNA.</li>
+								</ul>
+							</div>
+							<div style="text-align: center;">
+								<img src="Downloads/60251254_photo-51-print-qp867-a4_2.jpg" alt="Photo 51">
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">CHEM</div>
+						<h3>Chemistry: Polymorphism</h3>
+						<div class="grid-2">
+							<div>
+								<p><span class="highlight">Diamond vs Graphite</span>: Same atoms, different geometric arrangement.</p>
+								<ul>
+									<li>In Diamond: Carbon forms a 3D pyramid (Ultra-strong).</li>
+									<li>In Graphite: Carbon forms flat sheets (Slips easily, used in pencils).</li>
+									<li>X-rays tell us *how* they are connected, explaining why one is hard and the other soft.</li>
+								</ul>
+							</div>
+							<div style="text-align: center;">
+								<img src="Downloads/graphito vs diamante.png" alt="Graphite vs Diamond">
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">PHYS</div>
+						<h3>Physics: Interference</h3>
+						<div class="content-box">
+							<p>Detecting <span class="highlight">Constructive Interference</span> peaks within the crystal lattice.</p>
+							<ul>
+								<li>Think of it like waves in the ocean: When two waves hit and grow larger, that's "Constructive".</li>
+								<li>The X-ray detector only records these "big waves" (diffraction spots).</li>
+								<li>If the waves cancel out, we see nothing (Destructive Interference).</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+
+				<!-- CHAPTER 3: MATH -->
+				<section>
+					<section>
+						<div class="watermark">03</div>
+						<span class="tag">CHAPTER 03</span>
+						<h2>The Mathematical Engine</h2>
+						<div class="content-box">
+							<p>Mathematics transforms diffraction data into <span class="highlight">tangible molecular coordinates</span>. Without these formulas, the world of atoms remains invisible.</p>
+						</div>
+					</section>
+
+					<!-- BRAGG EXPLAINED -->
+					<section>
+						<div class="watermark">BRAG</div>
+						<h3>1. The Signal Finder (Bragg's Law)</h3>
+						<div class="grid-2">
+							<div>
+								<p><span class="highlight">What it does:</span> Determines the specific angles where X-rays "bounce" in sync.</p>
+								<ul>
+									<li>Identifies <span class="highlight">Constructive Interference</span>.</li>
+									<li>The "d" is the distance between atomic planes—our main goal.</li>
+									<li>&lambda; (Lambda) is the wavelength of our X-ray source.</li>
+								</ul>
+							</div>
+							<div class="math-large" style="font-size: 3.5em !important; padding: 60px;">n&lambda; = 2d sin(&theta;)</div>
+						</div>
+					</section>
+
+					<!-- DISTANCE EXPLAINED -->
+					<section>
+						<div class="watermark">DIST</div>
+						<h3>2. The Spatial Map (Miller Indices)</h3>
+						<div class="grid-2">
+							<div>
+								<p><span class="highlight">What it does:</span> Calculates the exact distance between layers of atoms.</p>
+								<ul>
+									<li>Uses <span class="highlight">h, k, l</span> (coordinates) to map 3D orientation.</li>
+									<li>"a" is the size of the Unit Cell (the basic repeating box of the crystal).</li>
+									<li>This tells us how "tightly packed" the atoms are.</li>
+								</ul>
+							</div>
+							<div class="math-large" style="font-size: 3.5em !important; padding: 60px;">d = a / &radic;(h&sup2;+k&sup2;+l&sup2;)</div>
+						</div>
+					</section>
+
+					<!-- TRIG EXPLAINED -->
+					<section>
+						<div class="watermark">TRIG</div>
+						<h3>3. Geometric Correction (Trig Laws)</h3>
+						<div class="grid-2">
+							<div class="content-box">
+								<h3>Sine Law</h3>
+								<p>Used for <span class="highlight">Triangulation</span>. If the crystal isn't a perfect cube, this calculates missing lengths using known angles from the detector.</p>
+								<div style="font-size: 2.5em; color: var(--inst-red); text-align: center; font-family: 'serif'; margin-top: 20px;">
+									\( \frac{a}{\sin(A)} = \frac{b}{\sin(B)} \)
+								</div>
+							</div>
+							<div class="content-box" style="border-left-color: var(--inst-grey-dark);">
+								<h3>Cosine Law</h3>
+								<p>Calculates <span class="highlight">Absolute Distance</span> in non-90° lattices. It's the "GPS" for atoms in complex, tilted crystals.</p>
+								<div style="font-size: 2.5em; color: var(--inst-red); text-align: center; font-family: 'serif'; margin-top: 20px;">
+									\( c^2 = a^2 + b^2 - 2ab \cos(C) \)
+								</div>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- CHAPTER 4: ENGLISH COMPONENT -->
+				<section>
+					<section>
+						<div class="watermark">ENG</div>
+						<span class="tag">CHAPTER 04</span>
+						<h2>Rhetorical Synthesis (English)</h2>
+						<div class="content-box">
+							<p>Integrating diverse evidence to justify scientific conclusions.</p>
+						</div>
+					</section>
+					<section>
+						<h3>Communicating Science</h3>
+						<ul>
+							<li><span class="highlight">Coherence:</span> Organizing complex data into a logical narrative.</li>
+							<li><span class="highlight">Evidence Integration:</span> Using Photo 51 (Visual) + Bragg's Law (Math) to prove a theory.</li>
+							<li><span class="highlight">Persuasion:</span> Justifying conclusions through precise, academic language.</li>
+							<li>Addressing counter-arguments to strengthen the final claim.</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- CHAPTER 5: IMPACT -->
+				<section>
+					<section>
+						<div class="watermark">05</div>
+						<span class="tag">CHAPTER 05</span>
+						<h2>Global Impact</h2>
+						<div class="content-box">
+							<p>Modern medicine and technology depend on atomic-level analysis. If we can't see it, we can't fix it.</p>
+						</div>
+					</section>
+					<section>
+						<div class="watermark">MED</div>
+						<h3>Precision Medicine & Vaccines</h3>
+						<div class="grid-2">
+							<div>
+								<p>Designing chemical "keys" to fit the viral "locks" of proteins.</p>
+								<ul>
+									<li><span class="highlight">Drug Design:</span> Scientists map the 3D shape of a virus protein to find its "weak spot".</li>
+									<li>This is how the COVID-19 vaccines and modern cancer drugs were developed.</li>
+								</ul>
+							</div>
+							<div style="text-align: center;">
+								<img src="Downloads/proteina.png" alt="Protein Structure">
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- DEMO: FULLSCREEN -->
+				<section data-background-iframe="codigo/pagina_esperado.html" data-background-interactive>
+					<div style="position: absolute; top: 40px; right: 40px; background: var(--inst-red); color: white; padding: 20px 40px; border-radius: 10px; font-weight: 900; font-size: 1.5em; box-shadow: var(--shadow); z-index: 100;">
+						LIVE INTERFACE MODE
+					</div>
+				</section>
+
+				<!-- CLOSING -->
+				<section data-background-color="#020617">
+					<div class="watermark" style="color: rgba(255,255,255,0.05);">END</div>
+					<h1 style="font-size: 10em !important;">KNOWLEDGE VISIBLE<span style="color: #fff;">.</span></h1>
+					<h3 style="text-align: center !important; color: var(--inst-red); letter-spacing: 20px; font-size: 3em !important; margin-top: 50px;">MISSION COMPLETE</h3>
+				</section>
+
+			</div>
+
+			<div class="footer-inst">
+				<span>PROJECT CRYSTALMETRICS</span>
+				<span>SCHOOL SAN BONIFACIO DE LAS LANZAS</span>
+				<span>2025-2026</span>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/math/math.min.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				center: true,
+				controls: true,
+				controlsLayout: 'bottom-right',
+				transition: 'zoom',
+				width: 1920,
+				height: 1080,
+				margin: 0.05,
+				plugins: [ RevealMath.KaTeX ]
+			});
+		</script>
+	</body>
+</html>
